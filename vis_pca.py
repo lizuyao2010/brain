@@ -8,14 +8,20 @@ from mpl_toolkits.mplot3d import Axes3D
 import datasets
 from sklearn.decomposition import PCA
 from sklearn import preprocessing
+from unbalanced_dataset import UnderSampler
 import numpy
 # import some data to play with
-# X,Y = datasets.load_data()
-X = numpy.loadtxt("tsne_python/mnist2500_X.txt")
-Y = numpy.loadtxt("tsne_python/mnist2500_labels.txt")
+X,Y = datasets.load_data()
+# X = numpy.loadtxt("tsne_python/mnist2500_X.txt")
+# Y = numpy.loadtxt("tsne_python/mnist2500_labels.txt")
 # scaler = preprocessing.StandardScaler().fit(X)
 # X=scaler.transform(X)
 
+# Generate the new dataset using under-sampling method
+verbose = False
+# 'Random under-sampling'
+US = UnderSampler(verbose=verbose)
+X, Y = US.fit_transform(X, Y)
 # To getter a better understanding of interaction of the dimensions
 # plot the first three PCA dimensions
 fig = plt.figure(1, figsize=(8, 6))
@@ -29,7 +35,7 @@ ax.set_ylabel("2nd eigenvector")
 ax.w_yaxis.set_ticklabels([])
 ax.set_zlabel("3rd eigenvector")
 ax.w_zaxis.set_ticklabels([])
-fig.savefig("pic/pca_3_t")
+fig.savefig("pic/pca_3_r")
 # To getter a better understanding of interaction of the dimensions
 # plot the first two PCA dimensions
 x_min, x_max = X_reduced[:, 0].min() - .5, X_reduced[:, 0].max() + .5
@@ -46,4 +52,4 @@ plt.xticks(())
 plt.yticks(())
 
 # plt.show()
-plt.savefig("pic/pca_2_t")
+plt.savefig("pic/pca_2_r")
