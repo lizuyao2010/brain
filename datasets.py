@@ -18,7 +18,7 @@ def load_data():
                 X.append(map(lambda z:float(z),x))
                 Y.append(int(y))
             i+=1
-    X=np.matrix(X)
+    X=np.array(X)
     Y=np.array(Y)
     return X,Y
 # X,Y=load_data()
