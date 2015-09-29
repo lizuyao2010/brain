@@ -7,10 +7,14 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import datasets
 from sklearn.decomposition import PCA
-
+from sklearn import preprocessing
+import numpy
 # import some data to play with
-X,Y = datasets.load_data()
-
+# X,Y = datasets.load_data()
+X = numpy.loadtxt("tsne_python/mnist2500_X.txt")
+Y = numpy.loadtxt("tsne_python/mnist2500_labels.txt")
+# scaler = preprocessing.StandardScaler().fit(X)
+# X=scaler.transform(X)
 
 # To getter a better understanding of interaction of the dimensions
 # plot the first three PCA dimensions
