@@ -20,5 +20,7 @@ def load_data():
             i+=1
     X=np.array(X)
     Y=np.array(Y)
+    print X.shape
+    print Y.shape
     return X,Y
 # X,Y=load_data()
