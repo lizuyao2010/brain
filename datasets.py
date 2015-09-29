@@ -1,5 +1,5 @@
 __author__ = 'lizuyao'
-fileName="data/impulsivity_r_processed.csv"
+fileName="data/impulsivity_t_processed.csv"
 import csv
 import numpy as np
 def load_data():
@@ -20,7 +20,7 @@ def load_data():
             i+=1
     X=np.array(X)
     Y=np.array(Y)
-    print X.shape
-    print Y.shape
+    print "X size:",X.shape
+    print "Y size:",Y.shape
     return X,Y
 # X,Y=load_data()

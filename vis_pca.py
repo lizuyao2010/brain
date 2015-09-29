@@ -25,7 +25,7 @@ ax.set_ylabel("2nd eigenvector")
 ax.w_yaxis.set_ticklabels([])
 ax.set_zlabel("3rd eigenvector")
 ax.w_zaxis.set_ticklabels([])
-fig.savefig("pic/pca_3")
+fig.savefig("pic/pca_3_t")
 # To getter a better understanding of interaction of the dimensions
 # plot the first two PCA dimensions
 x_min, x_max = X_reduced[:, 0].min() - .5, X_reduced[:, 0].max() + .5
@@ -42,4 +42,4 @@ plt.xticks(())
 plt.yticks(())
 
 # plt.show()
-plt.savefig("pic/pca_2")
+plt.savefig("pic/pca_2_t")
