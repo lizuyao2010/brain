@@ -6,7 +6,7 @@ from tsne_python import tsne
 
 # import some data to play with
 X,Y = datasets.load_data()
-ini_dim= X.shape[0]
+ini_dim= 50
 X_reduced = tsne.tsne(X, 3, ini_dim, 20.0)
 
 # To getter a better understanding of interaction of the dimensions
