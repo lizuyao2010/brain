@@ -9,6 +9,8 @@ from tsne_python import tsne
 
 # import some data to play with
 X,Y = datasets.load_data()
+X=X[500:]
+Y=Y[500:]
 ini_dim= 50
 X_reduced = tsne.tsne(X, 2, ini_dim, 20.0)
 
