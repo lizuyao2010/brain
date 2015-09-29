@@ -1,5 +1,5 @@
 __author__ = 'lizuyao'
-fileName="data/impulsivity_t_processed.csv"
+fileName="data/impulsivity_r_processed.csv"
 import csv
 import numpy as np
 def load_data():
