@@ -169,6 +169,9 @@ if __name__ == "__main__":
     print "Running example on 2,500 MNIST digits..."
     X = Math.loadtxt("mnist2500_X.txt");
     labels = Math.loadtxt("mnist2500_labels.txt");
+    print X.shape
+    print labels.shape
     Y = tsne(X, 2, 50, 20.0);
+    print Y.shape
     Plot.scatter(Y[:, 0], Y[:, 1], 20, labels);
     Plot.show()
