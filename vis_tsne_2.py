@@ -25,5 +25,5 @@ plt.xlim(x_min, x_max)
 plt.ylim(y_min, y_max)
 plt.xticks(())
 plt.yticks(())
-
-plt.show()
+plt.savefig("pic/tsne_2")
+# plt.show()

@@ -21,5 +21,5 @@ ax.set_ylabel("2nd eigenvector")
 ax.w_yaxis.set_ticklabels([])
 ax.set_zlabel("3rd eigenvector")
 ax.w_zaxis.set_ticklabels([])
-
-plt.show()
+fig.savefig("pic/tsne_3")
+# plt.show()
