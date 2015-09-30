@@ -1,3 +1,5 @@
+import sys
+
 __author__ = 'lizuyao'
 # print(__doc__)
 # Modified for documentation by Jaques Grobler
@@ -11,7 +13,8 @@ from sklearn import preprocessing
 from unbalanced_dataset import UnderSampler
 import numpy
 # import some data to play with
-X,Y = datasets.load_data()
+fileName=sys.argv[1]
+X,Y = datasets.load_data(fileName)
 # X = numpy.loadtxt("tsne_python/mnist2500_X.txt")
 # Y = numpy.loadtxt("tsne_python/mnist2500_labels.txt")
 # scaler = preprocessing.StandardScaler().fit(X)
@@ -48,6 +51,12 @@ ax.w_yaxis.set_ticklabels([])
 ax.set_zlabel("3rd eigenvector")
 ax.w_zaxis.set_ticklabels([])
 fig.savefig("pic/pca_3_t")
+
+# for ii in xrange(0,360,1):
+#     ax.view_init(elev=10., azim=ii)
+#     fig.savefig("move/movie"+str(ii)+".png")
+
+
 # To getter a better understanding of interaction of the dimensions
 # plot the first two PCA dimensions
 x_min, x_max = X_reduced[:, 0].min() - .5, X_reduced[:, 0].max() + .5
@@ -63,5 +72,5 @@ plt.ylim(y_min, y_max)
 plt.xticks(())
 plt.yticks(())
 
-plt.savefig("pic/pca_2_t")
+plt.savefig("pic/pca_2_r")
 # plt.show()
