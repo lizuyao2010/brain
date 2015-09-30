@@ -1,3 +1,5 @@
+import sys
+
 __author__ = 'lizuyao'
 import matplotlib
 matplotlib.use('Agg')
@@ -9,7 +11,8 @@ from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 
 # import some data to play with
-X,Y = datasets.load_data()
+fileName=sys.argv[1]
+X,Y = datasets.load_data(fileName)
 ini_dim= 50
 # X_reduced = tsne.tsne(X, 3, ini_dim, 20.0)
 model = TSNE(n_components=3, random_state=0)
@@ -27,5 +30,6 @@ ax.set_ylabel("2nd eigenvector")
 ax.w_yaxis.set_ticklabels([])
 ax.set_zlabel("3rd eigenvector")
 ax.w_zaxis.set_ticklabels([])
-fig.savefig("pic/tsne_3_r")
+outFile=sys.argv[2]#"pic/tsne_3_t"
+fig.savefig(outFile)
 # plt.show()
