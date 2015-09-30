@@ -2,7 +2,7 @@ __author__ = 'lizuyao'
 
 import csv
 import numpy as np
-def load_data(fileName="data/impulsivity_r_processed.csv"):
+def load_data(fileName):
     X=[]
     Y=[]
     with open(fileName,'r') as csvfile:
