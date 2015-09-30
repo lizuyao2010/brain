@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import datasets
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
-from tsne_python import tsne
+# from tsne_python import tsne
 
 # import some data to play with
 X,Y = datasets.load_data()

@@ -4,12 +4,16 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import datasets
-from tsne_python import tsne
+# from tsne_python import tsne
+from sklearn.decomposition import PCA
+from sklearn.manifold import TSNE
 
 # import some data to play with
 X,Y = datasets.load_data()
 ini_dim= 50
-X_reduced = tsne.tsne(X, 3, ini_dim, 20.0)
+# X_reduced = tsne.tsne(X, 3, ini_dim, 20.0)
+model = TSNE(n_components=3, random_state=0)
+X_reduced=model.fit_transform(PCA(n_components=ini_dim).fit_transform(X))
 
 # To getter a better understanding of interaction of the dimensions
 # plot the first three tsne dimensions
