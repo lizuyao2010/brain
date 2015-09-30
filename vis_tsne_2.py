@@ -1,5 +1,6 @@
 __author__ = 'lizuyao'
 # print(__doc__)
+import sys
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -9,7 +10,8 @@ from sklearn.manifold import TSNE
 # from tsne_python import tsne
 
 # import some data to play with
-X,Y = datasets.load_data()
+fileName=sys.argv[1]
+X,Y = datasets.load_data(fileName)
 ini_dim= 50
 # X_reduced = tsne.tsne(X, 2, ini_dim, 20.0)
 model = TSNE(n_components=2, random_state=0)
@@ -29,5 +31,7 @@ plt.xlim(x_min, x_max)
 plt.ylim(y_min, y_max)
 plt.xticks(())
 plt.yticks(())
-plt.savefig("pic/tsne_2_t")
+
+outFile=sys.argv[2]#"pic/tsne_2_t"
+plt.savefig(outFile)
 # plt.show()
