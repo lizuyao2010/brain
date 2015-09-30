@@ -50,11 +50,12 @@ ax.set_ylabel("2nd eigenvector")
 ax.w_yaxis.set_ticklabels([])
 ax.set_zlabel("3rd eigenvector")
 ax.w_zaxis.set_ticklabels([])
-fig.savefig("pic/pca_3_t")
+# outFile3D=sys.argv[2]
+# fig.savefig(outFile3D)
 
 # for ii in xrange(0,360,1):
 #     ax.view_init(elev=10., azim=ii)
-#     fig.savefig("move/movie"+str(ii)+".png")
+#     fig.savefig("move_r/movie"+str(ii)+".png")
 
 
 # To getter a better understanding of interaction of the dimensions
@@ -71,6 +72,6 @@ plt.xlim(x_min, x_max)
 plt.ylim(y_min, y_max)
 plt.xticks(())
 plt.yticks(())
-
-plt.savefig("pic/pca_2_r")
-# plt.show()
+# outFile2D=sys.argv[3]
+# plt.savefig(outFile2D="pic/pca_2_r.png")
+plt.show()
