@@ -1,4 +1,5 @@
 import sys
+from unbalanced_dataset import UnderSampler
 
 __author__ = 'lizuyao'
 import matplotlib
@@ -13,12 +14,19 @@ from sklearn.manifold import TSNE
 # import some data to play with
 fileName=sys.argv[1]
 X,Y = datasets.load_data(fileName)
-X=X[:len(X)*0.1]
-Y=Y[:len(Y)*0.1]
+# X=X[:len(X)*0.01]
+# Y=Y[:len(Y)*0.01]
 ini_dim= 50
 # X_reduced = tsne.tsne(X, 3, ini_dim, 20.0)
 model = TSNE(n_components=3, random_state=0)
 X_reduced=model.fit_transform(PCA(n_components=ini_dim).fit_transform(X))
+
+# Generate the new dataset using under-sampling method
+verbose = False
+# 'Random under-sampling'
+# ratio of majority elements to sample with respect to the number of minority cases.
+US = UnderSampler(ratio=1.,verbose=verbose)
+X_reduced, Y = US.fit_transform(X_reduced, Y)
 
 # To getter a better understanding of interaction of the dimensions
 # plot the first three tsne dimensions
