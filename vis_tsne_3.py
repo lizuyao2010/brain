@@ -13,6 +13,8 @@ from sklearn.manifold import TSNE
 # import some data to play with
 fileName=sys.argv[1]
 X,Y = datasets.load_data(fileName)
+X=X[:len(X)*0.1]
+Y=Y[:len(Y)*0.1]
 ini_dim= 50
 # X_reduced = tsne.tsne(X, 3, ini_dim, 20.0)
 model = TSNE(n_components=3, random_state=0)
