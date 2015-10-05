@@ -1,7 +1,9 @@
 __author__ = 'lizuyao'
 # print(__doc__)
+import pickle
 import sys
 import matplotlib
+
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import datasets
@@ -10,12 +12,14 @@ from sklearn.manifold import TSNE
 from unbalanced_dataset import UnderSampler
 
 # import some data to play with
-fileName=sys.argv[1]
-X,Y = datasets.load_data(fileName)
-ini_dim= 25
+fileName = sys.argv[1]
+X, Y = datasets.load_data(fileName)
+ini_dim = 25
 model = TSNE(n_components=2, random_state=0)
-X_reduced=model.fit_transform(PCA(n_components=ini_dim).fit_transform(X))
+X_reduced = model.fit_transform(PCA(n_components=ini_dim).fit_transform(X))
 
+pickle.dump(X_reduced, open(sys.argv[2], "wb"))
+'''
 # Generate the new dataset using under-sampling method
 verbose = False
 # 'Random under-sampling'
@@ -42,3 +46,4 @@ plt.yticks(())
 outFile=sys.argv[2]#"pic/tsne_2_t"
 plt.savefig(outFile)
 # plt.show()
+'''
