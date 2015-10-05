@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import datasets
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
-from unbalanced_dataset import UnderSampler
+# from unbalanced_dataset import UnderSampler
 
 # import some data to play with
 fileName = sys.argv[1]
