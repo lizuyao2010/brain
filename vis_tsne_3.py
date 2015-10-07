@@ -1,14 +1,10 @@
 import sys
 import pickle
-from unbalanced_dataset import UnderSampler
 
 __author__ = 'lizuyao'
 import matplotlib
 matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 import datasets
-# from tsne_python import tsne
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 
