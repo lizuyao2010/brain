@@ -1,4 +1,5 @@
 import sys
+import pickle
 from unbalanced_dataset import UnderSampler
 
 __author__ = 'lizuyao'
@@ -16,11 +17,12 @@ fileName=sys.argv[1]
 X,Y = datasets.load_data(fileName)
 # X=X[:len(X)*0.01]
 # Y=Y[:len(Y)*0.01]
-ini_dim= 50
+ini_dim= 25
 # X_reduced = tsne.tsne(X, 3, ini_dim, 20.0)
 model = TSNE(n_components=3, random_state=0)
 X_reduced=model.fit_transform(PCA(n_components=ini_dim).fit_transform(X))
-
+pickle.dump(X_reduced, open(sys.argv[2], "wb"))
+'''
 # Generate the new dataset using under-sampling method
 verbose = False
 # 'Random under-sampling'
@@ -43,3 +45,4 @@ ax.w_zaxis.set_ticklabels([])
 outFile=sys.argv[2]#"pic/tsne_3_t"
 fig.savefig(outFile)
 # plt.show()
+'''
